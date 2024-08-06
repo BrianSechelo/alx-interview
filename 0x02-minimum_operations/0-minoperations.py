@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-""" Module Documentation """
+#!/usr/bin/python3
+"""Module Documentation"""
 
 
 def minOperations(n):
