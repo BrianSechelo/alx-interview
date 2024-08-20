@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module doumentation"""
+
 def validUTF8(data):
     """Func documentation"""
     num_bytes = 0
