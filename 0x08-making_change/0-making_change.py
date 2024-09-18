@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 """
-Minimum Number of Coins using while loops
+Main file for testing
 """
 
 
-def makeChange(coins, total):
-    """ fewest number of coins needed to meet total """
-    if total <= 0:
+def makeChange(coins, amount):
+    """
+    How many of this type of coin can I get with my money? Okay,
+        I'll take that many. Now, how much money do I have left?
+        And how many coins do I have in my pocket?
+    """
+    if amount < 1:
         return 0
     coins.sort(reverse=True)
-    num_coins = 0
-    i = 0
-    n = len(coins)
-    while i < n and total > 0:
-        while total >= coins[i]:
-            total -= coins[i]
-            num_coins += 1
-        i += 1    
-    if total == 0:
-        return num_coins
-    else:
-        return -1
+    count = 0
+    for coin in coins:
+        if amount == 0:
+            break
+        num = amount // coin
+        amount -= num * coin
+        count += num
+    return count if amount == 0 else -1
